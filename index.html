@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="cMTrades">
+<title>cMTrades</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+html,body{margin:0;height:100%;background:#000;overflow:hidden}
+iframe{position:fixed;inset:0;width:100%;height:100%;border:0;background:#000}
+#hilfe{position:fixed;left:0;right:0;bottom:0;padding:10px;text-align:center;font:13px sans-serif;color:#aaa;background:#000c;display:none}
+#hilfe a{color:#ff4d4d}
+</style></head>
+<body>
+<iframe id="app" src="https://script.google.com/macros/s/AKfycbyyy35475IwW_xMnGBUL4ycb6iQ5wZssLAotEYUjd3F8D0ZPd35y8hMIOPiQClVFtnK/exec" allow="clipboard-write; fullscreen"></iframe>
+<div id="hilfe">Lädt nicht? Einmal in Chrome bei Google anmelden: <a href="https://script.google.com/macros/s/AKfycbyyy35475IwW_xMnGBUL4ycb6iQ5wZssLAotEYUjd3F8D0ZPd35y8hMIOPiQClVFtnK/exec" target="_blank">Dashboard im Browser öffnen</a> · <a href="#" onclick="location.reload();return false">neu laden</a></div>
+<script>
+var ok=false;document.getElementById('app').addEventListener('load',function(){ok=true});
+setTimeout(function(){if(!ok)document.getElementById('hilfe').style.display='block'},12000);
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js');
+</script>
+</body></html>
